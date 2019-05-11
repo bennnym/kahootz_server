@@ -26,6 +26,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'rack-cors'
 gem 'httparty'
 gem 'knock'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

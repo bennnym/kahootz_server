@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  post 'user_token' => 'user_token#create'
-  get '/quizes' => 'quizzes#quiz'
+  get '/quizzes' => 'quizzes#quiz'
+
+   scope '/quizzes' do
+    resources :quizzes
+    post 'user_token' => 'user_token#create'
+  end
+
 # root :to => somewhere
 end
