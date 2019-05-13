@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     post 'user_token' => 'user_token#create'
   end
 
-  #mount ActionCable.server => '/cable'
+  mount ActionCable.server => '/cable'
 
 
 # root :to => somewhere
