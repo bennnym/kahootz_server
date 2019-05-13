@@ -1,4 +1,21 @@
 class GamesController < ApplicationController
+  def all
+    games = Game.all
+    render json: games
+  end
+
+  def create
+    game = Game.new(game_params)
+
+    if game.save
+      serialized_data = ActiveModelSerializers::Adapter::Json.new(
+        GameSerializer.new(game)
+      ).serializable_hash
+      ActionCable.server.broadcast 'games_channel', serialized_data
+      head :ok
+    end
+  end
+
   def show
     game = Game.find_by :id => params[:id]
 
@@ -7,9 +24,9 @@ class GamesController < ApplicationController
   end
 
   # post request here to get a new game code
-  def new_game_code 
+  def new_game_code
     if params[:new_game] == true
-      game = Game.new 
+      game = Game.new
       game.save
     end
   end
@@ -20,4 +37,10 @@ class GamesController < ApplicationController
 
       render :json => new_game.to_json( :include => :players )
     end
+
+  private
+
+  def game_params
+    params.require(:game).permit(:title)
+  end
 end
