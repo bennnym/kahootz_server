@@ -9,7 +9,6 @@ class UsersController < ApplicationController
     # redirect_to "http://localhost:3000/?#{ @user.username }", :overwrite_params => { :parm => 'foo' } ## change this to the actual link 
       # redirect_to new_user_path
     else
-      raise 'hell'
     end
   end
 
