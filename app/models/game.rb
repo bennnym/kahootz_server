@@ -7,4 +7,5 @@
 
 class Game < ApplicationRecord
   has_many :players
+  belongs_to :quiz, :optional => true
 end

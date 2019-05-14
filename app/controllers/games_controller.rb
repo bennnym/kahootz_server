@@ -19,7 +19,7 @@ class GamesController < ApplicationController
   def show
     game = Game.find_by :id => params[:id]
 
-    render :json => game.to_json(:include => :players )
+    render :json => game.to_json(:include => { :quiz => { :include => { :questions => { :include => :answers}}}})
 
   end
 
@@ -27,6 +27,7 @@ class GamesController < ApplicationController
   def new_game_code
     if params[:new_game] == true
       game = Game.new
+      game.quiz_id = params[:quiz_id]
       game.save
     end
   end
