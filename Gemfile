@@ -27,6 +27,7 @@ gem 'rack-cors'
 gem 'httparty'
 gem 'knock'
 gem 'active_model_serializers', '~> 0.10.0'
+gem 'redis', '~> 4.1', '>= 4.1.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
