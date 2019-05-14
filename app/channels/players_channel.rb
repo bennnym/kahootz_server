@@ -4,6 +4,11 @@ class PlayersChannel < ApplicationCable::Channel
     stream_for game
   end
 
+  # def received(data)
+  #   PlayersChannel.broadcast_to(@game, {game: @game, players:
+  #   @game.waiting_users})
+  # end
+
   def unsubscribed
     # Any cleanup needed when channel is unsubscribed
   end

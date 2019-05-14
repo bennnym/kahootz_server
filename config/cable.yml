@@ -1,4 +1,7 @@
 development:
   adapter: async
+# production:
+#   adapter: async
 production:
-  adapter: async
+  adapter: redis
+  url: <%= ENV.fetch('ACTION_CABLE_REDIS_URL', 'redis://127.0.0.1:6380/1') %>
