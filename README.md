@@ -1,4 +1,4 @@
-# General Assembly Group Project - Kahoot Clone (Client Side)
+# General Assembly Group Project - Kahoot Clone (Server)
 ## Technology
 * ReactJS version: v16.8
 * Ruby version: ruby 2.6.2p47 (2019-03-13 revision 67232)
